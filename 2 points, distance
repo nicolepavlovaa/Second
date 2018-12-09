@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+#include <cmath>
+
+double length(double x1, double y1, double x2, double y2)
+{
+	double a, b;
+	double c;
+	if (y1 < y2) a = y2 - y1;
+	else a = y1 - y2;
+	if (x1 < x2) b = x2 - x1;
+	else b = x1 - x2;
+	c = sqrt(pow(a, 2) + pow(b, 2));
+	return c;
+}
+
+int main()
+{
+	double x1, x2, y1, y2;
+	cin >> x1 >> y1 >> x2 >> y2;
+	double result;
+	result = length(x1, y1, x2, y2);
+	system("pause");
+	return 0;
+}
+
