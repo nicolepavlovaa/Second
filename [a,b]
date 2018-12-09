@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+#include <cmath>
+
+int sum(int a, int b, int n)
+{
+	int result = 0;
+	for (int i = a; i <= b; i++)
+	{
+		if (i%n == 0) result = result + i;
+	}
+	return result;
+}
+
+int main()
+{
+	int a, b, n;
+	cin >> a >> b >> n;
+	int res;
+	res = sum(a, b, n);
+	cout << res << endl;
+	system("pause");
+	return 0;
+}
+
