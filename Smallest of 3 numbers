@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int smallest(int a, int b, int c)
+{
+	int result;
+	if (a <= b && a <= c)
+	{
+		result = a;
+	}
+	else if (b <= a && b <= c)
+	{
+		result = b;
+	}
+	else result = c;
+	return result;
+}
+
+int main()
+{
+	int a, b, c;
+	cin >> a >> b >> c;
+	int number;
+	number = smallest(a, b, c);
+	cout << number << endl;
+	system("pause");
+	return 0;
+}
+
