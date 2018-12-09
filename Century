@@ -1,1 +1,22 @@
 
+#include <iostream>
+using namespace std;
+
+int century(int year)
+{
+	int result;
+	if(year>=0) result = year / 100 + 1;
+	if (year < 0) result = (year / 100 + 1)*(-1);
+	return result;
+}
+
+int main()
+{
+	int year;
+	cin >> year;
+	int cen = century(year);
+	cout << cen << endl;
+	system("pause");
+	return 0;
+}
+
