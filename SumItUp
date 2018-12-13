@@ -1,0 +1,81 @@
+#include <iostream>
+#include <cstring>
+#include <cmath>
+using namespace std;
+
+bool isOperator(char o)
+{
+	if (o == '+' || o == '-' || o == '*' || o == '/' || o == '%')
+	{
+		return true;
+	}
+	else return false;
+}
+
+int sumItUp(char a, int number1, int number2)
+{
+	if (a == '+') { return number1 + number2; }
+	if (a == '-') { return number1 - number2; }
+	if (a == '*') { return number1 * number2; }
+	if (a == '/') { return number1 / number2; }
+	if (a == '%') { return number1 % number2; }
+}
+
+int stringToInt(char a[])
+{
+	int length = strlen(a);
+	int result = 0;
+	int j = 0;
+	for (int i = length - 1; i >= 0; i--)
+	{
+		int digit = a[i] - '0';
+		result = result + digit * pow(10, j);
+		j++;
+	}
+	return result;
+}
+
+int main()
+{
+	const int MAX = 100;
+	char expression[100];
+	cin.getline(expression, MAX);
+	int length = strlen(expression);
+	int result = 0;
+	for (int i = 0; i < length; i++) {
+		if (expression[i] > '0' && expression[i] <= '9')
+		{
+			char number[MAX];
+			int j = 0;
+			char operation = ' ';
+			bool isFirstNumber = false;
+
+			if (i == 0)isFirstNumber = true;
+
+			if(isFirstNumber == false)
+			operation = expression[i-1];
+
+			while (isOperator(expression[i]) == false)
+			{ 
+				if (i == length + 1)break;
+				number[j++] = expression[i++];
+			}
+
+			number[j] = '\0';
+	
+			int number2 = stringToInt(number);
+
+			if (isFirstNumber == false) 
+			{
+				result = sumItUp(operation, result, number2);
+			}
+			else result = number2;
+		}
+	}
+
+	cout << result;
+	
+	system("pause");
+	return 0;
+	
+}
