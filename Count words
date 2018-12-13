@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+bool isLetter(char a)
+{
+	if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
+	return true;
+	else return false;
+}
+
+int main()
+{
+	char word[100];
+	cin.getline(word, 100);
+	int size = strlen(word);
+	int counter = 0;
+	
+	for (int i = 0; i < size-1; i++)
+	{
+		if (isLetter(word[i])==true && isLetter(word[i+1])==false)
+		{
+			counter++;
+		}
+	}
+	if (isLetter(word[size - 1]) == true)
+	{
+		counter++;
+	}
+	cout << "There are " << counter << " words in this string." << endl;
+
+	system("pause");
+	return 0;
+	
+}
