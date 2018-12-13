@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main()
+{
+	char word[100];
+	bool isPalindrome = true;
+	cin.getline(word, 100);
+	int size = strlen(word);
+	cout << size << endl;
+	int j = 0;
+	for (int i = size-1; isPalindrome==true && i >=0; i--)
+	{
+			if (word[i] != word[j])
+			{
+				isPalindrome = false;
+			}
+			j++;
+	}
+	if (isPalindrome == true) 
+	{ 
+		cout << "Yes" << endl; 
+	}
+	else cout << "No" << endl;
+
+	system("pause");
+	return 0;
+	
+}
