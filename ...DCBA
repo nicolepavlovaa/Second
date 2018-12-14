@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstring>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+	char c;
+	cin >> c;
+	while (c<'A' || c> 'Z')
+	{
+		cout << "Please enter another letter!" << endl;
+		cin >> c;
+	}
+	int counter = c - 'A';
+	for (int i = 0; i <= counter; i++)
+	{
+		cout << char(c - i);
+	}
+	cout << endl;
+
+	system("pause");
+	return 0;
+}
