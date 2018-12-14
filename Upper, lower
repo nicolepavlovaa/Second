@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstring>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+	const int MAX = 100;
+	char text[MAX];
+	cin.getline(text, MAX);
+	for (int i = 0; i < strlen(text); i++)
+	{
+		if (text[i] >= 'A' && text[i] <= 'Z')
+		{
+			text[i] = text[i] + 32;
+		}
+		else if (text[i] >= 'a' && text[i] <= 'z')
+		{
+			text[i] = text[i] - 32;
+		}
+	}
+	cout << text << endl;
+
+	system("pause");
+	return 0;
+}
